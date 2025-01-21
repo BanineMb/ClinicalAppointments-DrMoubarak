@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clinical Appointments</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Appointment Form</h1>
+
+      <form id="appointmentForm">
+        <label for="name">Patient Name:</label>
+        <input type="text" id="name" required />
+
+        <label for="sex">Sex:</label>
+        <select id="sex" required>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" required />
+
+        <label for="case">Case Description:</label>
+        <textarea id="case"></textarea>
+
+        <label for="appointmentDate">Appointment Date:</label>
+        <input type="datetime-local" id="appointmentDate" required />
+
+        <label for="note">Additional Notes:</label>
+        <textarea id="note"></textarea>
+
+        <button type="submit">Add Appointment</button>
+      </form>
+
+      <h2>Appointments List</h2>
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search by Name or Date"
+        oninput="filterAppointments()"
+      />
+
+      <table id="appointmentsTable">
+        <thead>
+          <tr>
+            <th>Patient Name</th>
+            <th>Sex</th>
+            <th>Age</th>
+            <th>Case</th>
+            <th>Appointment Date</th>
+            <th>Notes</th>
+            <th>Status</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
